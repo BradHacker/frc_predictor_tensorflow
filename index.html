@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>FRC Predictor TensorFlow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+    .chart rect {
+      fill: steelblue;
+    }
+
+    .chart text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+    }
+  </style>
+</head>
+<body>
+  <svg class="chart"></svg>
+  <p id="loss">loss: </p>
+  <p id="errorText" style="color:red;"></p>
+  <input id="eventCode" placeholder="Event Key"/>
+  <input type="number" id="matchNum" placeholder="Match Num"/>
+  <p>Match Type</p>
+  <div>
+    <input type="radio" id="qm"
+      name="matchType" value="qm">
+    <label for="qm">qm</label>
+    <input type="radio" id="ef"
+      name="matchType" value="ef">
+    <label for="ef">ef</label>
+    <input type="radio" id="qf"
+      name="matchType" value="qf">
+    <label for="qf">qf</label>
+    <input type="radio" id="sf"
+      name="matchType" value="sf">
+    <label for="sf">sf</label>
+    <input type="radio" id="f"
+      name="matchType" value="f">
+    <label for="f">f</label>
+    <button onclick="predict">predict</button>
+    <p id="predictP"></p>
+  </div>
+</body>
+</html>
